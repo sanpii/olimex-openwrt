@@ -117,9 +117,9 @@ $ht_capab
 
 config wifi-iface
 	option device   radio$devidx
-	option network  lan
+	option network  wifi
 	option mode     ap
-	option ssid     OpenWrt
+	option ssid     ParpinTernet
 	option encryption none
 
 EOF
