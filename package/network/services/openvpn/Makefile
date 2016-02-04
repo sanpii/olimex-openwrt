@@ -102,6 +102,7 @@ define Package/openvpn-$(BUILD_VARIANT)/install
 		$(1)/etc/init.d \
 		$(1)/etc/config \
 		$(1)/etc/openvpn \
+		$(1)/etc/openvpn \
 		$(1)/lib/upgrade/keep.d
 
 	$(INSTALL_BIN) \
@@ -114,6 +115,12 @@ define Package/openvpn-$(BUILD_VARIANT)/install
 
 	$(INSTALL_CONF) files/openvpn.config \
 		$(1)/etc/config/openvpn
+
+	$(INSTALL_CONF) files/my-vpn.conf \
+		$(1)/etc/openvpn
+
+	$(INSTALL_CONF) files/credentials \
+		$(1)/etc/openvpn/credentials
 
 	$(INSTALL_DATA) \
 		files/openvpn.upgrade \
